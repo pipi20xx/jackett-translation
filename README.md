@@ -4,8 +4,6 @@ jackett 汉化
 
 如果你喜欢，请给个star :)
 
-<a href="https://github.com/Nriver"><img align="center" src="https://moe-counter--nriver1.repl.co/get/@Nriver_jackett-translation"></a><br>
-
 # 截图
 
 主界面

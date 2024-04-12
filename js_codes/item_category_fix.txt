@@ -14,7 +14,7 @@ var cat_dict = {
 
 var mains_cats = [];
 $.unique(main_cats_list).forEach(function (cat) {
-    console.log(cat);
+    // console.log(cat);
     mains_cats.push(cat_dict[cat]);
 });
 item.mains_cats = mains_cats.join(", ");
