@@ -1,0 +1,36 @@
+function translation(results) {
+    // 翻译
+    var trans = {
+        "Anime": " 动画 ",
+        "Audio": " 音乐 ",
+        "Audiobook": " 有声书 ",
+        "Books": " 书刊 ",
+        "Comics": " 漫画 ",
+        "Console": " 游戏 ",
+        "Documentary": " 纪录片 ",
+        "EBook": " 电子书 ",
+        "Games": " 游戏 ",
+        "Lossless": " 无损 ",
+        "Mags": " 杂志 ",
+        "Movies": " 电影 ",
+        "Other": " 其它 ",
+        "PC": " 软件 ",
+        "Sport": " 体育 ",
+        "TV": " 剧集 ",
+    };
+
+    for (var i = 0; i < results.length; i++) {
+        var item = results[i];
+        var categoryDesc = item.CategoryDesc;
+
+        for (var key in trans) {
+            if (trans.hasOwnProperty(key)) {
+                categoryDesc = categoryDesc.replace(key, trans[key]);
+            }
+        }
+
+        // 更新替换后的 CategoryDesc
+        item.CategoryDesc = categoryDesc;
+    }
+    return results;
+}

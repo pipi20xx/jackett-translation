@@ -322,6 +322,24 @@ with open(f'{PATCH_FOLDER}src/Jackett.Common/Content/custom.js', 'r', encoding='
         code += '\n' + ' ' * indent
         content = content.replace(key_code, code)
 
+    # 资源类型翻译
+    key_code = 'function translation(results) {'
+    if key_code not in content:
+
+        # 添加函数
+        indent = 0
+        code = load_js('js_codes/result_category_fix.txt', indent=indent)
+        code += '\n' + ' ' * indent
+        content = content + code
+
+        # 增加调用
+        content = content.replace('function updateSearchResultTable(element, results) {', '''function updateSearchResultTable(element, results) {
+    if ("Results" in results) {
+        results.Results = translation(results.Results);
+    }''')
+        content = content.replace('        api.getServerCache(function (data) {', '''        api.getServerCache(function (data) {
+            data = translation(data);''')
+
 with open(f'{PATCH_FOLDER}src/Jackett.Common/Content/custom.js', 'w', encoding='utf-8') as f:
     f.write(content)
 
