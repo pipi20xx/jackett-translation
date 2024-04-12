@@ -153,6 +153,7 @@ translation = [
     '>[[Proxy username: ]]<',
     '>[[Proxy password: ]]<',
     '>[[External access: ]]<',
+    '>[[Local bind address: ]]<',
     '>[[Allow CORS: ]]<',
     '>[[Disable auto update: ]]<',
     '>[[Update to pre-release: ]]<',
@@ -178,19 +179,20 @@ translation = [
     '>[[Tracker]]<',
     '>[[Name]]<',
     '>[[Size]]<',
-    '>[[Files]]<',
+    '[[title="Files">F</th>]]',
     '>[[Category]]<',
-    '>[[Grabs]]<',
-    '>[[Seeds]]<',
-    '>[[Leechers]]<',
-    '>[[DL Factor]]<',
-    '>[[UL Factor]]<',
-    '>[[Download]]<',
+    '[[title="Grabs">G</th>]]',
+    '[[title="Seeders">S</th>]]',
+    '[[title="Leechers">L</th>]]',
+    '>[[DLF]]<',
+    '>[[ULF]]<',
+    '>[[DL]]<',
     '>[[Close]]<',
     '>[[Manual search]]<',
     '>[[You can search all configured indexers from this screen.]]<',
     '>[[Query]]<',
     '>[[Filter]]<',
+    '>[[Tracker]]<',
     '>[[all]]<',
     '>[[Error]]<',
     '>[[Select an indexer to setup]]<',
@@ -358,4 +360,4 @@ logger.info(f"{'finished!'}")
 if platform.system() == 'Linux':
     if 'GITHUB_ACTIONS' not in os.environ:
         os.system(f'xdg-open {PATCH_FOLDER}')
-    os.system(f'cp -rf {PATCH_FOLDER}/* /home/nate/soft/Jackett/current')
+    # os.system(f'cp -rf {PATCH_FOLDER}/* /home/nate/soft/Jackett/current')

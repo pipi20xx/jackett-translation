@@ -105,7 +105,7 @@ def decompress_win_package(file_name):
             if DO_DELETE:
                 os.system(f'rm -rf Jackett-cn.zip')
             logger.info(f'{extracted_folder}')
-            os.system(f'mv {extracted_folder} Jackett')
+            # os.system(f'mv {extracted_folder} Jackett')
 
 
 if __name__ == '__main__':
